@@ -5,17 +5,16 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class ProdutoBean {
 
 	private Produto produto;
 	private static List<Produto> lista;
-
 	private DataModel<Produto> produtos;
 	
 	@PostConstruct
@@ -35,6 +34,24 @@ public class ProdutoBean {
 	public String excluirProduto() {
 		Produto p = (Produto) (produtos.getRowData());
 		lista.remove(p);
+		return "home";
+	}
+		
+	public String listarProdutos() {
+		return "home";
+	}
+	
+	public String salvarProduto() {
+		lista.add(produto);
+		return "home";
+	}
+	
+	public String editarProduto() {
+		produto = (Produto) (produtos.getRowData());
+		return "produto_form2";
+	}
+	
+	public String store() {
 		return "home";
 	}
 	

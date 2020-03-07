@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<h1>Cadastro de produtos</h1>
+	<h1>Editar produtos</h1>
 
 	<h:form>
 		<h3>
@@ -23,7 +23,7 @@
 		<h:inputText value="#{produtoBean.produto.nome}"> </h:inputText>
 		<h:outputLabel value="Preço"></h:outputLabel>
 		<h:inputText value="#{produtoBean.produto.preco}"> </h:inputText>
-		<h:commandButton value="Salvar" action="#{produtoBean.salvarProduto}"></h:commandButton>
+		<h:commandButton value="Salvar" action="#{produtoBean.editarProduto}"></h:commandButton>
 		</h:panelGrid>
 	</h:form>
 
